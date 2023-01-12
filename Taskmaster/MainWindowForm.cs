@@ -3,11 +3,13 @@ using Taskmaster.Components;
 using Taskmaster.Models;
 using Taskmaster.StateManagement;
 using WK.Libraries.HotkeyListenerNS;
-
+using FileHelpers;
 namespace Taskmaster
 {
     public partial class MainWindowForm : Form
     {
+        static readonly FileHelperEngine TaskEngine = new FileHelperEngine(typeof(WorkTask));
+        static readonly FileHelperEngine EmployeeEngine = new FileHelperEngine(typeof(Employee));
         HotkeyListener hotkeyListener = new();
         User? _user;
 

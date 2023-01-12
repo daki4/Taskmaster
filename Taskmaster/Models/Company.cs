@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Net.NetworkInformation;
+using System.Runtime.Serialization;
 
 namespace Taskmaster.Models
 {
@@ -8,15 +9,13 @@ namespace Taskmaster.Models
         [DataMember]
         public string Name { get; set; }
         [DataMember]
-        public List<Employee> Employees { get; private set; }
+        public static readonly List<Employee> Employees = new();
         [DataMember]
-        public List<WorkTask> Tasks { get; private set; }
+        public static readonly List<WorkTask> Tasks = new();
 
         public Company(string name)
         {
             Name = name;
-            Employees = new List<Employee>();
-            Tasks = new List<WorkTask>();
         }
 
         public Company(string name, List<Employee> employees, List<WorkTask> tasks)
@@ -24,6 +23,19 @@ namespace Taskmaster.Models
             Name = name;
             Employees = employees;
             Tasks = tasks;
+        }
+        public static WorkTask? UpStatus(WorkTask task)
+        {
+            if (task.Status == WorkTaskStatus.Completed || task.Status == WorkTaskStatus.InProgress)
+            {
+                return null;
+            }
+            else
+            {
+                task.Status++;
+                
+                return task;
+            }
         }
     }
 }

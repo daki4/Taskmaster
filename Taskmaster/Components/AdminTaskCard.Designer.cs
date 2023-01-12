@@ -30,10 +30,14 @@
         {
             this.taskCard1 = new Taskmaster.Components.TaskCard();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnUpStatus = new System.Windows.Forms.Button();
+            this.btnDownStatus = new System.Windows.Forms.Button();
+            this.btnBlock = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +51,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnBlock);
+            this.panel1.Controls.Add(this.btnDownStatus);
+            this.panel1.Controls.Add(this.btnUpStatus);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBox2);
@@ -57,21 +65,14 @@
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
             // 
-            // comboBox1
+            // label2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(151, 6);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(151, 35);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Remove department:";
             // 
             // label1
             // 
@@ -82,14 +83,57 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Add department:";
             // 
-            // label2
+            // comboBox2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Remove department:";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(151, 35);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 23);
+            this.comboBox2.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(151, 6);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // btnUpStatus
+            // 
+            this.btnUpStatus.Location = new System.Drawing.Point(197, 64);
+            this.btnUpStatus.Name = "btnUpStatus";
+            this.btnUpStatus.Size = new System.Drawing.Size(75, 23);
+            this.btnUpStatus.TabIndex = 4;
+            this.btnUpStatus.Text = "Up status";
+            this.btnUpStatus.UseVisualStyleBackColor = true;
+            // 
+            // btnDownStatus
+            // 
+            this.btnDownStatus.Location = new System.Drawing.Point(116, 64);
+            this.btnDownStatus.Name = "btnDownStatus";
+            this.btnDownStatus.Size = new System.Drawing.Size(75, 23);
+            this.btnDownStatus.TabIndex = 5;
+            this.btnDownStatus.Text = "Down status";
+            this.btnDownStatus.UseVisualStyleBackColor = true;
+            // 
+            // btnBlock
+            // 
+            this.btnBlock.Location = new System.Drawing.Point(116, 93);
+            this.btnBlock.Name = "btnBlock";
+            this.btnBlock.Size = new System.Drawing.Size(75, 23);
+            this.btnBlock.TabIndex = 6;
+            this.btnBlock.Text = "Block";
+            this.btnBlock.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(197, 93);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // AdminTaskCard
             // 
@@ -114,5 +158,9 @@
         private Label label1;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
+        private Button btnDownStatus;
+        private Button btnUpStatus;
+        private Button btnCancel;
+        private Button btnBlock;
     }
 }

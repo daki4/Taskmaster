@@ -1,25 +1,28 @@
 ﻿using System.Runtime.Serialization;
+using FileHelpers;
 
 namespace Taskmaster.Models
 {
     [DataContract]
+    [DelimitedRecord(",")]
     public class WorkTask
     {
         static int GlobId = 0;
         [DataMember]
-        public int Id { get; private set; }
+        public int Id { get; set; }
         [DataMember]
-        public string Name { get; private set; }
+        public string Name { get; set; }
         [DataMember]
-        public HashSet<string> Departments { get; private set; }
+        public HashSet<string> Departments { get; set; }
         [DataMember]
-        public WorkTaskStatus? Status { get; private set; }
+        public WorkTaskStatus? Status { get; set; }
         [DataMember]
-        public DateTime Deadline { get; private set; }
+        [FieldConverter(ConverterKind.Date, "dd-MM-yyyy")]
+        public DateTime Deadline { get; set; }
         [DataMember]
-        public HashSet<Employee> Employees { get; private set; }
+        public HashSet<Employee> Employees { get; set; }
         [DataMember]
-        public string Description { get; private set; }
+        public string Description { get; set; }
         public string SearchableText { get; }
 
         public WorkTask(string name, HashSet<string> departments, WorkTaskStatus? status, DateTime deadline, HashSet<Employee> employees, string description)
