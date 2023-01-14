@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Taskmaster.Models.DataHandling
+﻿namespace Taskmaster.Models.DataHandling
 {
     public static class TaskHandler
     {
@@ -14,7 +8,7 @@ namespace Taskmaster.Models.DataHandling
         //tasks functionality, abstracted away and put here
         public static WorkTask? UpStatus(WorkTask task)
         {
-            if (task.Status == WorkTaskStatus.Completed || task.Status == WorkTaskStatus.InProgress)
+            if (task.Status >= WorkTaskStatus.Completed)
             {
                 return null;
             }
@@ -28,7 +22,7 @@ namespace Taskmaster.Models.DataHandling
         }
         public static WorkTask? DownStatus(WorkTask task)
         {
-            if (task.Status == WorkTaskStatus.Open || task.Status == WorkTaskStatus.Blocked)
+            if (task.Status == WorkTaskStatus.Open || task.Status >= WorkTaskStatus.Blocked)
             {
                 return null;
             }
@@ -61,6 +55,11 @@ namespace Taskmaster.Models.DataHandling
             Tasks.Remove(task);
             return task;
         }
-
+        //public static 
     }
 }
+        //Open,
+        //InProgress,
+        //Completed,
+        //Blocked,
+        //Cancelled,

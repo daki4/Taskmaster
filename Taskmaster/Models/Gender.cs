@@ -2,7 +2,6 @@
 
 namespace Taskmaster.Models
 {
-    [DataContract]
     public enum Gender
     {
         Male,
