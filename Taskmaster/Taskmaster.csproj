@@ -17,4 +17,8 @@
     <PackageReference Include="HotkeyListener" Version="1.9.0" />
     <PackageReference Include="ServiceStack.Text.Core" Version="6.5.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Serialization\" />
+  </ItemGroup>
 </Project>
