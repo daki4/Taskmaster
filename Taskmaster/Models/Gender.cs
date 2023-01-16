@@ -1,10 +1,9 @@
-﻿using System.Runtime.Serialization;
-
-namespace Taskmaster.Models
+﻿namespace Taskmaster.Models
 {
     public enum Gender
     {
         Male,
         Female,
+        None,
     }
 }

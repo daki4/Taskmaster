@@ -1,5 +1,5 @@
 ﻿using Taskmaster.Models;
-using Taskmaster.StateManagement;
+using Taskmaster.Models.DataHandling;
 
 namespace Taskmaster
 {
@@ -17,11 +17,11 @@ namespace Taskmaster
                 List<WorkTask> tasksToDisplay;
                 if (baseSearch != "")
                 {
-                    tasksToDisplay = State.CompanyContainer.Tasks.Where(task => task.SearchableText.Contains(baseSearch)).ToList();
+                    tasksToDisplay = TaskHandler.Tasks.Where(task => task.SearchableText.Contains(baseSearch)).ToList();
                 }
                 else
                 {
-                    tasksToDisplay = State.CompanyContainer.Tasks;
+                    tasksToDisplay = TaskHandler.Tasks;
                 }
                 if (dept != "")
                 {

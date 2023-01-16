@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace Taskmaster.Models
+﻿namespace Taskmaster.Models
 {
     public class Employee
     {
@@ -33,5 +31,10 @@ namespace Taskmaster.Models
         }
 
         public Employee() { }
+
+        public override string ToString()
+        {
+            return $"{Id},{Ssn},{FirstName},{LastName},{Gender},{StreetName},{StreetNumber},{Zipcode},{City},{Email},{Department}";
+        }
     }
 }

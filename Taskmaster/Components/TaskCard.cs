@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Taskmaster.Models;
+﻿using Taskmaster.Models;
 using Taskmaster.StateManagement;
 
 namespace Taskmaster.Components
@@ -7,12 +6,20 @@ namespace Taskmaster.Components
     public partial class TaskCard : UserControl
     {
         WorkTask _task;
+        public WorkTask StoredTask
+        {
+            get
+            {
+                return _task;
+            }
+        }
         public WorkTask UpdateUsingObject
         {
             set
             {
                 _task = value;
                 DepartmentsLayoutPanel.Controls.Clear();
+                lbBy.Items.Clear();
                 foreach (string department in State.Departments)
                 {
                     if (value.Departments.Contains(department))
@@ -20,9 +27,9 @@ namespace Taskmaster.Components
                         DepartmentsLayoutPanel.Controls.Add(new Label { Text = department });
                     }
                 }
-                foreach (Employee author in value.Employees)
+                foreach (string author in value.Employees)
                 {
-                    lbBy.Items.Add($"{author.FirstName} {author.LastName}");
+                    lbBy.Items.Add(author);
                 }
                 lblDeadline.Text = value.Deadline.ToString();
                 lblDescription.Text = value.Description;
@@ -36,11 +43,5 @@ namespace Taskmaster.Components
         {
             InitializeComponent();
         }
-        //public TaskCard(WorkTask task)
-        //{
-        //    _task = task;
-        //    InitializeComponent();
-        //    UpdateUsingObject = task;
-        //}
     }
 }
