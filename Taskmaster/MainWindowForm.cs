@@ -95,14 +95,14 @@ namespace Taskmaster
                 cbAdminDepartment.Items.Add(department);
                 cbAdminDepartment.AutoCompleteCustomSource.Add(department);
             }
-            foreach (WorkTask task in TaskHandler.Filter(x => true))
-            {
-                flpTasksHome.Controls.Add(new TaskCard() { UpdateUsingObject = task });
+            //foreach (WorkTask task in TaskHandler.Filter(x => true))
+            //{
+            //    flpTasksHome.Controls.Add(new TaskCard() { UpdateUsingObject = task });
 
-                // admin tasks and injection
-                var taskControl = new TaskCard { UpdateUsingObject = task };
-                flpAdminTasks.Controls.Add(taskControl);
-            }
+            //    // admin tasks and injection
+            //    var taskControl = new TaskCard { UpdateUsingObject = task };
+            //    flpAdminTasks.Controls.Add(taskControl);
+            //}
         }
         private void btnLoadData_Click(object sender, EventArgs e)
         {

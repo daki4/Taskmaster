@@ -135,7 +135,7 @@
             {
                 return null;
             }
-            if (!_tasks.Find(x => x == task).Employees.Contains(Employee))
+            if (_tasks.Find(x => x == task).Employees.Contains(Employee))
             {
                 return null;
             }

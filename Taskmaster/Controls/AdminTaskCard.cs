@@ -76,7 +76,7 @@ namespace Taskmaster.Components
                 var name = $"{employee.FirstName} {employee.LastName}";
                 if (!TaskCard.StoredTask.Departments.Contains(name))
                 {
-                    cbAddDept.Items.Add(name);
+                    cbAddEmployee.Items.Add(name);
                 }
             }
         }
